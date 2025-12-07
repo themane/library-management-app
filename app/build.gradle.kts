@@ -79,6 +79,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -88,5 +89,14 @@ dependencies {
     implementation(platform(libs.supabase.bom))
     implementation(libs.supabase.auth)
     implementation(libs.supabase.postgres)
+    implementation(libs.supabase.realtime)
+    implementation(libs.supabase.storage)
+//    implementation(libs.supabase.client)
+    implementation(libs.googleclient)
+    implementation(libs.andorid.credentials)
+    implementation(libs.googleid)
+
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
 
 }

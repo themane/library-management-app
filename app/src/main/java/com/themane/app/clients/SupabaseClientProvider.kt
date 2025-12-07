@@ -1,12 +1,12 @@
-package com.themane.app
+package com.themane.app.clients
 
-import androidx.viewpager2.widget.WindowInsetsApplier
+import com.themane.app.BuildConfig
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
 
-object SupabaseManager {
+object SupabaseClientProvider {
 
     val client: SupabaseClient = createSupabaseClient(
         // Access keys safely from BuildConfig
@@ -14,8 +14,9 @@ object SupabaseManager {
         supabaseKey = BuildConfig.SUPABASE_ANON_KEY
     ) {
         // Install required plugins
-        WindowInsetsApplier.install(Auth)
-        WindowInsetsApplier.install(Postgrest)
+        install(Auth)
+        install(Postgrest)
+
         // You can configure the Ktor client used by Supabase here if needed
         // httpEngine = OkHttp // For example
     }
